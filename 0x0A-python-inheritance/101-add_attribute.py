@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ add_attribute module """
 
+
 def add_attribute(prmObject, prmName, prmValue):
     """ add_attribute function """
     if not hasattr(prmObject, "__dict__"):
