@@ -1,4 +1,20 @@
 #!/usr/bin/python3
+"""
+Script reads stdin line by line and computes metrics
+
+Input format:
+    <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
+
+    Each 10 lines and after a keyboard interruption (CTRL + C),
+    prints those statistics since the beginning:
+    total file size and
+    possible status code: 200, 301, 400, 401, 403, 404, 405 and 500
+
+    format: File size: <total size>
+    format: <status code (in ascending order)>: <number>
+"""
+
+
 import sys
 
 
