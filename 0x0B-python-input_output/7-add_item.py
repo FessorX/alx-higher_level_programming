@@ -1,20 +1,18 @@
 #!/usr/bin/python3
+"""add item"""
 
-from sys import argv
+
 import json
+import sys
 import os.path
 
-save_json = __import__('5-save_to_json_file').save_to_json_file
-load_json = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-my_file = 'add_item.json'
-if os.path.isfile(my_file):
-    my_list = load_json(my_file)
+filename = "add_item.json"
+if os.path.isfile(filename):
+    obj = load_from_json_file(filename)
 else:
-    my_list = []
-count = 0
-for item in argv:
-    if count != 0
-        my_list.append(item)
-    count += 1
-save_json(my_list, my_file)
+    obj = []
+obj.extend(sys.argv[1:])
+save_to_json_file(obj, filename)
